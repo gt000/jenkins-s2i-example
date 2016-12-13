@@ -12,7 +12,7 @@ metadata:
   name: jenkins-master-s2i
 parameters:
 - description: Git source URI for Jenkins S2I
-  name: SOURCE_REPOSITORY_URL
+  name:  SOURCE_REPOSITORY_URL
   required: true
   value: https://github.com/gt000/jenkins-s2i-example.git
 - description: Git branch/tag reference
