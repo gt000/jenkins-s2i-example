@@ -54,6 +54,10 @@ objects:
       port: 8080
       protocol: TCP
       targetPort: 8080
+    - name: selenium
+      port: 4444
+      protocol: TCP
+      targetPort: 4444
     - name: jnlp
       port: 50000
       protocol: TCP
@@ -136,6 +140,8 @@ objects:
           imagePullPolicy: Always
           name: jenkins
           ports:
+          - containerPort: 4444
+            protocol: TCP
           - containerPort: 8080
             protocol: TCP
           - containerPort: 50000
