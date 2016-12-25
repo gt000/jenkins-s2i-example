@@ -12,7 +12,7 @@ source /usr/local/bin/kube-slave-common.sh
 image_config_dir="/opt/openshift/configuration"
 image_config_path="${image_config_dir}/config.xml"
 
-echo "Custom assemble......!!!!"
+echo "Custom run......!!!!"
 
 CONTAINER_MEMORY_IN_BYTES=`cat /sys/fs/cgroup/memory/memory.limit_in_bytes`
 DEFAULT_MEMORY_CEILING=$((2**40-1))
