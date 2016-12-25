@@ -62,6 +62,10 @@ objects:
       port: 50000
       protocol: TCP
       targetPort: 50000
+    - name: selenium
+      port: 4444
+      protocol: TCP
+      targetPort: 4444
     selector:
       app: jenkins
       deploymentconfig: jenkins
@@ -145,6 +149,8 @@ objects:
           - containerPort: 8080
             protocol: TCP
           - containerPort: 50000
+            protocol: TCP
+          - containerPort: 4444
             protocol: TCP
           resources: {}
           terminationMessagePath: /dev/termination-log
