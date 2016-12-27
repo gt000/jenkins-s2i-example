@@ -92,7 +92,7 @@ if [ "$(ls -A /opt/openshift/plugins 2>/dev/null)" ]; then
     echo "Copying $(ls /opt/openshift/plugins | wc -l) Jenkins plugins to ${JENKINS_HOME} ..."
     cp -r /opt/openshift/plugins/* ${JENKINS_HOME}/plugins/
     rm -rf /opt/openshift/plugins
-  fi
+fi
 
 
 if [ -e ${JENKINS_HOME}/password ]; then
