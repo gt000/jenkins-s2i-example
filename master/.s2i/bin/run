@@ -90,11 +90,11 @@ fi
 if [ "$(ls -A /opt/openshift/plugins 2>/dev/null)" ]; then
     mkdir -p ${JENKINS_HOME}/plugins
     echo "Copying $(ls /opt/openshift/plugins | wc -l) Jenkins plugins to ${JENKINS_HOME} ..."
-#    pushd /opt/openshift/plugins
+    pushd /opt/openshift/plugins
     pwd
  
- #   for f in *.hpi; do export fname=$(cut -f1 -d'.' $f); echo fname; echo $fname; done
- #   ; export fname=$(cut -f1 -d'.' $f); echo "fname $fname"; rm ${JENKINS_HOME}/plugins/$fname.jpi; rm ${JENKINS_HOME}/plugins/$fname.hpi; done
+    for f in *.hpi; do export fname=`echo "$f" | cut -d'.' -f1`; echo fname; echo $fname; rm ${JENKINS_HOME}/plugins/$fname.jpi; rm ${JENKINS_HOME}/plugins/$fname.hpi; done
+    popd
     cp -r /opt/openshift/plugins/* ${JENKINS_HOME}/plugins/
     
 #    rm -rf /opt/openshift/plugins
