@@ -25,7 +25,7 @@ if [ -d ${JENKINS_INSTALL_DIR}/plugins ]; then
    pushd ${JENKINS_INSTALL_DIR}/plugins
    for f in *.hpi; do export fname=`echo "$f" | cut -d'.' -f1`; echo "Removing previous version of plugins.."; echo $fname; rm ${JENKINS_DIR}/plugins/$fname.jpi; rm ${JENKINS_DIR}/plugins/$fname.hpi; done
    popd
-
+   
   cp -R ${JENKINS_INSTALL_DIR}/plugins/* ${JENKINS_DIR}/plugins/
   /usr/local/bin/fix-permissions ${JENKINS_DIR}/plugins
 fi
